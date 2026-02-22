@@ -1,0 +1,42 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules in your project.
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:7.2.0"
+    }
+}
+
+// All modules in your app will inherit these properties.
+
+group = 'com.example'
+version = '1.0'
+
+// Configure all sub-projects/modules.
+subprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+// This is the main Android configuration block.
+android {
+    compileSdkVersion 31
+    defaultConfig {
+        applicationId "com.example.app"
+        minSdkVersion 21
+        targetSdkVersion 31
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
